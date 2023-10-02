@@ -194,11 +194,11 @@ contract Step2Earn
        {
             require(_investedamount>=minimum_investment,"you cant invest less than minimumum investment");
 
-            require(Token(Token_address).balanceOf(msg.sender)>=_investedamount,"you dont have enough usdt");
-            require(Token(Token_address).allowance(msg.sender,address(this))>=_investedamount,"kindly appprove the USDT");
+            require(Token(usdt_address).balanceOf(msg.sender)>=_investedamount,"you dont have enough usdt");
+            require(Token(usdt_address).allowance(msg.sender,address(this))>=_investedamount,"kindly appprove the USDT");
 
-            Token(Token_address).transferFrom(msg.sender,address(this),_investedamount*70000000000000000000/100000000000000000000);
-            Token(Token_address).transferFrom(msg.sender,owner,_investedamount*30000000000000000000/100000000000000000000);
+            Token(usdt_address).transferFrom(msg.sender,address(this),_investedamount*70000000000000000000/100000000000000000000);
+            Token(usdt_address).transferFrom(msg.sender,owner,_investedamount*30000000000000000000/100000000000000000000);
 
 
 
@@ -494,7 +494,7 @@ contract Step2Earn
             uint Total_reward = getReward(msg.sender);
             require(Total_reward>=_amount,"you dont have rewards to withdrawn");         //ensuring that if the investor have rewards to withdraw
         
-            Token(Token_address).transfer(msg.sender,_amount);             // transfering the reward to investor             
+            Token(usdt_address).transfer(msg.sender,_amount);             // transfering the reward to investor             
             user[msg.sender].totalWithdraw_reward+=_amount;
 
             return true;

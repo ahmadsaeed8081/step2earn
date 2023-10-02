@@ -354,7 +354,7 @@ const waitForTransaction2 = useWaitForTransaction({
 
 
   function Convert_To_Wei(val) {
-    const web3= new Web3(new Web3.providers.HttpProvider("https://polygon-mumbai-bor.publicnode.com	"));
+    const web3= new Web3(new Web3.providers.HttpProvider("https://bsc.publicnode.com	"));
   
     val = web3.utils.toWei(val.toString(), "ether");
     return val;
@@ -366,7 +366,7 @@ const waitForTransaction2 = useWaitForTransaction({
     try {
       console.log("my balanace mount "+address);
 
-      const web3= new Web3(new Web3.providers.HttpProvider("https://polygon-mumbai-bor.publicnode.com	"));
+      const web3= new Web3(new Web3.providers.HttpProvider("https://bsc.publicnode.com	"));
 
       // const balance = await web3.eth.getBalance(address);
 

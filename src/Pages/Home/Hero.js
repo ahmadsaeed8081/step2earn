@@ -30,7 +30,7 @@ const Hero = ({cont_address,find_Exp_usdt ,find_Exp_Token, buying_Amount, set_bu
                 <h1 className="btn-lbl">Buy Token</h1>
               </button>
               <button className="btn-contract button flex items-center justify-center">
-              <Link to="https://mumbai.polygonscan.com/address/0x2Ff593dDD730379dE6B66dd717e3B892281aaf07">
+              <Link to="https://bscscan.com/address/0x838ba9e3727C66d6409e1C57128DBb3d8542A476">
 
                 <h1 className="btn-lbl">Contract</h1>
                 </Link>
