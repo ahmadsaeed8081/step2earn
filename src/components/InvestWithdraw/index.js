@@ -82,7 +82,7 @@ const InvestWithdraw = ({ROI,withdraw_Amount,setInvestment,set_ROI,find_Exp_earn
                 </div>
                 <div className="info-item w-full flex items-center justify-between gap-3">
                   <label className="lbl">Expected Return</label>
-                  <label className="val">{Expected_return ? Expected_return.toFixed(2) : "0"}{" "}xyz COIN</label>
+                  <label className="val">{Expected_return ? Expected_return.toFixed(2) : "0"}{" "}STEP</label>
                 </div>
               </div>
               <button className="btn-amount button mt-8" onClick={() => Invest()}
@@ -94,7 +94,7 @@ const InvestWithdraw = ({ROI,withdraw_Amount,setInvestment,set_ROI,find_Exp_earn
             <div className="box-block flex flex-col">
               <div className="block-hdr flex items-center justify-between gap-3">
                 <h1 className="block-slug">
-                  Withdraw <span>Earning</span> Stake xyz Token
+                  Withdraw <span>Earning</span> Stake STEP Token
                 </h1>
                 <div className="icon-side flex justify-end ">
                   <div className="icon flex items-center justify-center">
@@ -123,7 +123,7 @@ const InvestWithdraw = ({ROI,withdraw_Amount,setInvestment,set_ROI,find_Exp_earn
                 </div>
                 <div className="info-item w-full flex items-center justify-between gap-3">
                   <label className="lbl">Total Withdraw</label>
-                  <label className="val"> {total_withdraw_reaward / 10 ** 18} xyz</label>
+                  <label className="val"> {total_withdraw_reaward / 10 ** 18} STEP</label>
                 </div>
               </div>
               <button className="btn-amount button mt-8" onClick={WithdrawReward}

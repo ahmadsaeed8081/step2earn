@@ -158,7 +158,7 @@ const {
   address: cont_address,
   abi: cont_abi,
   functionName: 'invest',
-  args: [Convert_To_Wei(Number(investment)),referral],
+  args: [Convert_To_Wei(Number(investment))],
   onSuccess(data) {
     mount();
     console.log('Success', data)
@@ -199,7 +199,7 @@ const {
 });
 
 const { config: appConfig } = usePrepareContractWrite({
-  address: Token_address,
+  address: usdt_address,
   abi: tokenABI,
   functionName: "approve",
   args: [cont_address,Convert_To_Wei(Number(investment))],
@@ -553,7 +553,7 @@ const waitForTransaction2 = useWaitForTransaction({
       return
     }
 
-    if (Number(balance) < Number(investment*10**18)) {
+    if (Number(usdt_balance) < Number(investment*10**18)) {
       alert("you dont have enough balance to invest");
       return;
     } 
@@ -674,7 +674,7 @@ const waitForTransaction2 = useWaitForTransaction({
 
   return (
     <Wrapper>
-      <Hero find_Exp_usdt={find_Exp_usdt} find_Exp_Token={find_Exp_Token} buying_Amount={buying_Amount} set_buying_Amount={set_buying_Amount} selling_Amount={selling_Amount} set_selling_Amount={set_selling_Amount} purchaseToken={purchaseToken} sellToken={sellToken} />
+      <Hero find_Exp_usdt={find_Exp_usdt} find_Exp_Token={find_Exp_Token} buying_Amount={buying_Amount} set_buying_Amount={set_buying_Amount} selling_Amount={selling_Amount} set_selling_Amount={set_selling_Amount} purchaseToken={purchaseToken} sellToken={sellToken} cont_address={cont_address} />
       <InvestWithdraw  ROI={ROI} withdraw_Amount={withdraw_Amount} setInvestment={setInvestment}set_ROI={set_ROI}find_Exp_earn={find_Exp_earn}find_Roi={find_Roi}minimum_investment={minimum_investment}set_Expected_return={set_Expected_return}Expected_return={Expected_return}Invest={Invest}set_withdraw_Amount={set_withdraw_Amount}total_withdraw_reaward={total_withdraw_reaward}cal_after_withdraw={cal_after_withdraw}after_Withdraw={after_Withdraw}WithdrawReward={WithdrawReward}investment={investment}totlaInvestment={totlaInvestment}totalEarning={totalEarning}totalReward={totalReward}totalReferrals={totalReferrals}address={address} />
       <InvestmentHistory Allinvestment={Allinvestment} Allinvestment_earning={Allinvestment_earning} count={count} find_Roi={find_Roi} isWalletConnected={isWalletConnected}/>
       <Referral ref_data1={ref_data1} ref_data={ref_data}/>

@@ -4,7 +4,7 @@ import BuyTokenModel from "../../components/BuyTokenModel";
 import { EditIcon, RocketIcon } from "../../assets/Icons";
 import { Link } from "react-router-dom";
 
-const Hero = ({find_Exp_usdt ,find_Exp_Token, buying_Amount, set_buying_Amount, selling_Amount, set_selling_Amount, purchaseToken, sellToken }) => {
+const Hero = ({cont_address,find_Exp_usdt ,find_Exp_Token, buying_Amount, set_buying_Amount, selling_Amount, set_selling_Amount, purchaseToken, sellToken }) => {
   const [open, setOpen] = useState(false);
   return (
     <div id="home" className="lading-page bg-themeColor2 h-screen flex">
@@ -30,7 +30,7 @@ const Hero = ({find_Exp_usdt ,find_Exp_Token, buying_Amount, set_buying_Amount, 
                 <h1 className="btn-lbl">Buy Token</h1>
               </button>
               <button className="btn-contract button flex items-center justify-center">
-              <Link to="https://mumbai.polygonscan.com/tx/0x7fc6ad8ae989edb75dd489127a0587b7e4f52d3a6dae5db6ae0ab363d8abf107">
+              <Link to="https://mumbai.polygonscan.com/address/0x2Ff593dDD730379dE6B66dd717e3B892281aaf07">
 
                 <h1 className="btn-lbl">Contract</h1>
                 </Link>
