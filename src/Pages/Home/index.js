@@ -84,7 +84,7 @@ const Main = () => {
 
   useEffect(() => {
     mount();
-  }, [ result]);
+  }, [ address]);
 
   const search = useLocation().search;
   const id = new URLSearchParams(search).get("ref");
