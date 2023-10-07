@@ -41,9 +41,9 @@ const Token = () => {
                 <h2 className="check-desc">One Pager</h2>
               </div>
             </div>
-            <button className="token-button">
+            {/* <button className="token-button">
               Buy Sale Token <select className="select"></select>
-            </button>
+            </button> */}
           </div>
           <div className="flex-1 py-7 px-7 max-md:p-0">
             <img

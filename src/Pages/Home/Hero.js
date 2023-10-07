@@ -11,13 +11,15 @@ const Hero = ({cont_address,find_Exp_usdt ,find_Exp_Token, buying_Amount, set_bu
       <div className="wrap wrapWidth flex">
         <div className="hero-section flex w-full items-center max-md:flex-col max-md:justify-center">
           <div className="hero-left-side flex flex-1 flex-col">
-            <h1 className="hero-slug">Staking Rule</h1>
-            <h1 className="hero-slug">
-              The <span>World</span>
-            </h1>
+            <h1 className="hero-slug">Welcome to <span>Steps2Earn</span></h1>
+            {/* <h1 className="hero-slug">
+            </h1> */}
             <p className="hero-desc">
-              It is a long established fact that a reader will be distracted by
-              the readable content of a page when looking at its layout.
+            Welcome to "Steps2Earn" - The Ultimate Online Games platform that Pays You to Play!
+Are you an online games lover looking to level up your gaming experience? Do you want to turn your passion for gaming into real-life rewards? Look no further! Steps2Earn is here to revolutionize your gaming journey while putting some serious money in your pocket.
+For investors who are not interested in playing games but want to earn every hour, Steps2earn is the answer, with the power of a smart contract, decentralized blockchain, and using Binance smart chain, you get paid every hour as game lovers play games globally .
+
+
             </p>
             <div className="actions flex items-center">
               <button

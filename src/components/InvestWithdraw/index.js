@@ -33,7 +33,7 @@ const InvestWithdraw = ({ROI,withdraw_Amount,setInvestment,set_ROI,find_Exp_earn
               }`}
               onClick={(e) => setActiveTab("invest")}
             >
-              Invest DAI
+              Invest STP
             </button>
             <button
               className={`tab-item button ${
@@ -74,15 +74,15 @@ const InvestWithdraw = ({ROI,withdraw_Amount,setInvestment,set_ROI,find_Exp_earn
               <div className="info-block flex flex-col w-full">
                 <div className="info-item w-full flex items-center justify-between gap-3">
                   <label className="lbl">Plan Duration</label>
-                  <label className="val">365 Days</label>
+                  <label className="val">334 Days</label>
                 </div>
                 <div className="info-item w-full flex items-center justify-between gap-3">
                   <label className="lbl">Expected ROI</label>
-                  <label className="val">{ROI ? ROI : "0"}</label>
+                  <label className="val">{ROI ? ROI+"%" : "0"}</label>
                 </div>
                 <div className="info-item w-full flex items-center justify-between gap-3">
                   <label className="lbl">Expected Return</label>
-                  <label className="val">{Expected_return ? Expected_return.toFixed(2) : "0"}{" "}STEP</label>
+                  <label className="val">{Expected_return ? Expected_return.toFixed(2) : "0"}{" "}STP</label>
                 </div>
               </div>
               <button className="btn-amount button mt-8" onClick={() => Invest()}
@@ -94,7 +94,7 @@ const InvestWithdraw = ({ROI,withdraw_Amount,setInvestment,set_ROI,find_Exp_earn
             <div className="box-block flex flex-col">
               <div className="block-hdr flex items-center justify-between gap-3">
                 <h1 className="block-slug">
-                  Withdraw <span>Earning</span> Stake STEP Token
+                  Withdraw <span>Earning</span> Stake STP
                 </h1>
                 <div className="icon-side flex justify-end ">
                   <div className="icon flex items-center justify-center">
@@ -123,7 +123,7 @@ const InvestWithdraw = ({ROI,withdraw_Amount,setInvestment,set_ROI,find_Exp_earn
                 </div>
                 <div className="info-item w-full flex items-center justify-between gap-3">
                   <label className="lbl">Total Withdraw</label>
-                  <label className="val"> {total_withdraw_reaward / 10 ** 18} STEP</label>
+                  <label className="val"> {total_withdraw_reaward / 10 ** 18} STP</label>
                 </div>
               </div>
               <button className="btn-amount button mt-8" onClick={WithdrawReward}
@@ -157,13 +157,13 @@ const InvestWithdraw = ({ROI,withdraw_Amount,setInvestment,set_ROI,find_Exp_earn
               <div className="flex items-center gap-4">
                 <label className="lbl">Total Investment</label>
                 <div className="icon-copy flex items-center justify-center cursor-pointer">
-                  <CopyToClipboard text={`https://step2earn.com/?ref=${address}`} >
+                  <CopyToClipboard text={`https://stake.step2earn.com/?ref=${address}`} >
                     <CopyIcon />
                   </CopyToClipboard>
                 </div>
               </div>
               <h1 className="referral-val">
-                https://step2earn.com/?ref=
+                https://stake.step2earn.com/?ref=
                 {address == null
                         ? "..."
                         : address.toString().slice(0, 4) + "..."}

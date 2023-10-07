@@ -10,22 +10,45 @@ const Stake = () => {
             Staking
           </p>
           <h1 className="main-heading">How to Stake ?</h1>
-          <h2 className="stake-heaing">Add Xyz Tokens</h2>
+          <h2 className="stake-heaing">Add STP Tokens</h2>
           <p className="stake-desc">
-            You will need tokens in your wallet to stake. Once you purchase CIP
-            tokens, make sure that you add the CIP token to your
-            MetaMask/TrustWallet Wallet so you can view your CIP balance.
+          You will need BEP20 USDT in your wallet Make sure you have enough USDT in your wallet.
           </p>
           <h2 className="stake-heaing">Connect & Verify Wallet</h2>
           <p className="stake-desc">
-            Click the "Connect Wallet" button at the upper right corner of the
-            site and make sure you have the Arbitrum network selected in your
-            MetaMask wallet.
+          Click the “Connect Wallet” button at the upper right corner of the website and click Connect.
+          <br></br>
+          Choose the amount of STP you want to buy , pay with BEP20 USDT.
+          <br></br>
+          Choose the wallet where you have the STP you want to stake.
+          <br></br>
+
+          Add the STP you want to stake.
+
           </p>
-          <h2 className="stake-heaing">Stake Wallet</h2>
+          <h2 className="stake-heaing">Why Steps2earn</h2>
           <p className="stake-desc">
-            You'll need to click the 'Stake CIP' and scroll to the top of the
-            page to bring up the staking interface on the site.
+          Earn 400% of your investment as people play games globally.
+<br></br>
+The global online gaming market size was valued at USD 61.7 Billion in 2022 and will achieve a market size of USD 163.0 Billion by 2032, budding at a CAGR of 10.2%.
+<br></br>
+
+You are sharing revenue with us.
+
+          </p>
+          <h2 className="stake-heaing">Easy to stake
+</h2>
+          <p className="stake-desc">
+          Earnings paid out every hour
+
+
+<br></br>
+
+Decentralized, you don’t need admin approval to withdraw your earnings
+<br></br>
+
+Follow us on all social media platforms
+
           </p>
           <button className="stake-btn">
             <h1 className="btn">More Details</h1>

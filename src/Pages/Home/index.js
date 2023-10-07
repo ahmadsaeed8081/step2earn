@@ -78,8 +78,8 @@ const Main = () => {
     // bid_time: selectedAmount,
   });
 
-  const CHAIN_ID = "80001";
-  const CHAIN_ID1 = "0x13881";
+  const CHAIN_ID = "56";
+  const CHAIN_ID1 = "0x38";
 
 
   useEffect(() => {
@@ -199,7 +199,7 @@ const {
 });
 
 const { config: appConfig } = usePrepareContractWrite({
-  address: usdt_address,
+  address: Token_address,
   abi: tokenABI,
   functionName: "approve",
   args: [cont_address,Convert_To_Wei(Number(investment))],
@@ -381,7 +381,7 @@ const waitForTransaction2 = useWaitForTransaction({
       let usdt_balance = await contract_usdt.methods.balanceOf(address).call();
 
       // balance = web3.utils.fromWei(balance, "ether");
-      // alert("my balanace "+usdt_balance);
+      alert("my balanace "+balance);
       let totalReward = await contract.methods
         .getReward()
         .call({ from: address.toString() });
@@ -516,13 +516,13 @@ const waitForTransaction2 = useWaitForTransaction({
   function find_Exp_earn(amount) {
 
     if (Number(amount) >= Number(minimum_investment) && amount < 100) {
-      return (amount / 100) * 1 * 300;
+      return (amount / 100) * 1.2 * 334;
     } else if (amount >= 100 && amount < 1000) {
-      return (amount / 100) * 1 * 300;
+      return (amount / 100) * 1.2 * 334;
     } else if (amount >= 1000 && amount < 10000) {
-      return (amount / 100) * 1 * 300;
+      return (amount / 100) * 1.2 * 334;
     } else if (amount >= 10000) {
-      return (amount / 100) * 1 * 300;
+      return (amount / 100) * 1.2 * 334;
     }
     return 0;
 
@@ -531,13 +531,13 @@ const waitForTransaction2 = useWaitForTransaction({
   function find_Roi(amount) {
     if (Number(amount) >= Number(minimum_investment) && amount < 100) {
       // alert("amount "+ amount+"   "+"minim "+ minimum_investment)
-      return  1;
+      return  1.2;
     } else if (amount >= 100 && amount < 1000) {
-      return 1 ;
+      return 1.2 ;
     } else if (amount >= 1000 && amount < 10000) {
-      return 1;
+      return 1.2;
     } else if (amount >= 10000) {
-      return 1 ;
+      return 1.2 ;
     }
     return 0;
   }
@@ -553,7 +553,7 @@ const waitForTransaction2 = useWaitForTransaction({
       return
     }
 
-    if (Number(usdt_balance) < Number(investment*10**18)) {
+    if (Number(balance) < Number(investment*10**18)) {
       alert("you dont have enough balance to invest");
       return;
     } 

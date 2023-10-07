@@ -5,6 +5,7 @@ import {
   YoutubeIcon,
   InstagramIcon,
   FacebookIcon,
+  
 } from "../../assets/Icons";
 import { Link } from "react-router-dom";
 
@@ -21,22 +22,27 @@ const Update = () => {
         
           <div className="icon">
 
+          <Link to="https://www.facebook.com/profile.php?id=61551804243401&mibextid=LQQJ4d">
             <FacebookIcon />
 
+            </Link>
           </div>
 
           <div className="icon">
+            <Link to="https://twitter.com/realsteps2earn">
             <TwitterIcon />
+            </Link>
+          </div>
+
+          <div className="icon">
+            <Link to="https://t.me/steps2earn" >
+              <LinkedinIcon />
+            </Link>
           </div>
           <div className="icon">
-            {" "}
-            <InstagramIcon />
-          </div>
-          <div className="icon">
-            <LinkedinIcon />
-          </div>
-          <div className="icon">
+          <Link to="https://www.youtube.com/@steps2earn" >
             <YoutubeIcon />
+          </Link>          
           </div>
         </div>
       </div>

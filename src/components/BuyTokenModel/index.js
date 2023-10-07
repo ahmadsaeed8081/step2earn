@@ -4,11 +4,6 @@ const BuyTokenModel = ({find_Exp_usdt ,find_Exp_Token, buying_Amount, set_buying
   const [activeTab, setActiveTab] = useState("Purchase");
 
 
-
-
-
-
-
   
   return (
     <div className="buy-token-model-section flex flex-col">
@@ -30,11 +25,11 @@ const BuyTokenModel = ({find_Exp_usdt ,find_Exp_Token, buying_Amount, set_buying
       </div>
       {activeTab === "Purchase" ? (
         <div className="model-block flex flex-col">
-          <h1 className="block-title">Purchase STEP Token</h1>
+          <h1 className="block-title">Purchase STP Token</h1>
           <div className="input-field flex flex-col">
             <div className="flex items-center mb-4 w-full justify-between gap-3">
               <h1 className="input-lbl">Enter Your Amount in USDT</h1>
-              <h1 className="input-lbl">1 STEP = 0.02$</h1>
+              <h1 className="input-lbl">1 STP = 0.02$</h1>
             </div>
             <input type="number" 
             className="txt cleanbtn"
@@ -45,7 +40,7 @@ const BuyTokenModel = ({find_Exp_usdt ,find_Exp_Token, buying_Amount, set_buying
           </div>
           <div className="info-block flex flex-col w-full">
             <div className="info-item w-full flex items-center justify-between gap-3">
-              <label className="lbl">Expected STEP Token</label>
+              <label className="lbl">Expected STP Token</label>
               <label className="val">{find_Exp_Token()}</label>
             </div>
             {/* <div className="info-item w-full flex items-center justify-between gap-3">
@@ -57,11 +52,11 @@ const BuyTokenModel = ({find_Exp_usdt ,find_Exp_Token, buying_Amount, set_buying
         </div>
       ) : activeTab === "Sale" ? (
         <div className="model-block flex flex-col">
-          <h1 className="block-title">Sale STEP Token</h1>
+          <h1 className="block-title">Sale STP Token</h1>
           <div className="input-field flex flex-col">
             <div className="flex items-center mb-4 w-full justify-between gap-3">
               <h1 className="input-lbl">Inter Your Amount</h1>
-              <h1 className="input-lbl">1 Step = 0.015$</h1>
+              <h1 className="input-lbl">1 STP = 0.015$</h1>
             </div>
             <input type="number" className="txt cleanbtn" placeholder="0.0" 
              value={selling_Amount}
