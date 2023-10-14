@@ -94,15 +94,17 @@ const InvestmentHistory = ({Allinvestment,count,Allinvestment_earning,find_Roi,i
             <div className="row-item">Invested Amount</div>
             <div className="row-item">Expiration Time Left</div>
             <div className="row-item">Total Earned</div>
-            <div className="row-item">Perday ROI</div>
+            <div className="row-item">ROI</div>
           </div>
           {Allinvestment.map((item, index) => (
             <div key={index} className="row flex items-center">
               <div className="row-item">{index+1}</div>
-              <div className="row-item">{item[0] / 10 ** 18} USDT</div>
+              <div className="row-item">{item[0] / 10 ** 18} STP</div>
               <div className="row-item">{count(item[1])}</div>
-              <div className="row-item">{Allinvestment_earning[index]} USDT</div>
-              <div className="row-item">{find_Roi(item[0] / 10 ** 18)}%</div>
+              <div className="row-item">{Allinvestment_earning[index]} STP</div>
+                {/* <div className="row-item">{find_Roi(item[0] / 10 ** 18)}%</div> */}
+
+              <div className="row-item"> EARN EVERY HOUR</div>
             </div>
           ))}
         </div>

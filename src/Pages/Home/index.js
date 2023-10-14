@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Select from "react-select";
+import Loader from "../../components/Loader";
 
 import Wrapper from "../../routes/Wrapper";
 import Token from "../../components/Token/Token";
@@ -34,7 +35,7 @@ const Main = () => {
   const { chain } = useNetwork()
 
 
-  const [open, setOpen] = useState(false);
+  const [loader, setLoader] = useState(false);
   const [isWalletConnected, setisWalletConnected] = useState(false);
   const [investment, setInvestment] = useState("");
   const [ROI, set_ROI] = useState(0);
@@ -83,7 +84,11 @@ const Main = () => {
 
 
   useEffect(() => {
-    mount();
+    if(address)
+    {
+      mount();
+
+    }
   }, [ address]);
 
   const search = useLocation().search;
@@ -354,7 +359,7 @@ const waitForTransaction2 = useWaitForTransaction({
 
 
   function Convert_To_Wei(val) {
-    const web3= new Web3(new Web3.providers.HttpProvider("https://bsc.publicnode.com	"));
+    const web3= new Web3(new Web3.providers.HttpProvider("https://bsc.publicnode.com"));
   
     val = web3.utils.toWei(val.toString(), "ether");
     return val;
@@ -365,8 +370,8 @@ const waitForTransaction2 = useWaitForTransaction({
     }
     try {
       console.log("my balanace mount "+address);
-
-      const web3= new Web3(new Web3.providers.HttpProvider("https://bsc.publicnode.com	"));
+      setLoader(true)
+      const web3= new Web3(new Web3.providers.HttpProvider("https://bsc.publicnode.com"));
 
       // const balance = await web3.eth.getBalance(address);
 
@@ -379,9 +384,10 @@ const waitForTransaction2 = useWaitForTransaction({
 
       let balance = await contract1.methods.balanceOf(address).call();
       let usdt_balance = await contract_usdt.methods.balanceOf(address).call();
-
+      setBalance(balance);
+      set_usdtBalance(usdt_balance);
       // balance = web3.utils.fromWei(balance, "ether");
-      alert("my balanace "+balance);
+      // alert("my balanace "+balance);
       let totalReward = await contract.methods
         .getReward()
         .call({ from: address.toString() });
@@ -473,8 +479,7 @@ const waitForTransaction2 = useWaitForTransaction({
       set_Ref_data(ref_data);
       set_Ref_data1(ref_data1);
       set_ref_from(ref_from[0]);
-      setBalance(balance);
-      set_usdtBalance(usdt_balance);
+      setLoader(false);
 
       
       setUser(address);
@@ -681,6 +686,8 @@ const waitForTransaction2 = useWaitForTransaction({
       <Stake />
       <Token />
       <Update />
+      {loader && <Loader />}
+
     </Wrapper>
   );
 };

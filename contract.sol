@@ -48,12 +48,16 @@ contract Step2Earn
         uint public selling_price=15000000000000000;
 
         address public Token_address=0x33b0E5AB94132AF35F1B174bd28d12bB04FB8Ed8;
-        address public usdt_address=0xd562bEA1e3ca6236e3c2626b5E1499f44E9002b7;
 
-        address owner=0x4e28A7871B33C8358A5A116f62696d073BEc4670;
+        // address public Token_address=0xcC143Bf065D91FBBCe858D76E823B65c2045d7d3;
+        address public usdt_address=0x55d398326f99059fF775485246999027B3197955;
+
+        address public owner=0x9177cBd62A910cD69909070cfC34cC6a6B924406;
+        address public marketing_add=0x4Be52B7FA0906f235a3AcA29B05E76562B3fdb8A;
+
         uint public totalbusiness; 
-        uint public investmentPeriod=369 days;
-        uint  divider=1 days;
+        uint public investmentPeriod=334 days;
+        uint  divider=60 minutes;
 
         
         uint public totalusers;
@@ -61,7 +65,7 @@ contract Step2Earn
         mapping(uint=>uint) public category_percentage;
         mapping(uint=>address) public All_investors;
         mapping(address=>Data) public user;
-        uint[] public arr=[1000000000000000000,1000000000000000000,1000000000000000000,1000000000000000000];
+        uint[] public arr=[50000000000000000,50000000000000000,50000000000000000,50000000000000000];
 
 
 
@@ -146,8 +150,15 @@ contract Step2Earn
             require(Token(usdt_address).balanceOf(msg.sender)>=((buying_price * token)/10**18));
             
             Token(Token_address).transfer(msg.sender,token);
-            Token(usdt_address).transferFrom(msg.sender,address(this),((buying_price * token)/10**18));
-            
+
+            uint amount50= ((((buying_price * token)/(10**18))*(50*10**18))/(100*10**18));
+            uint amount30= ((((buying_price * token)/(10**18))*(30*10**18))/(100*10**18));
+            uint amount20= ((((buying_price * token)/(10**18))*(20*10**18))/(100*10**18));
+
+            Token(usdt_address).transferFrom(msg.sender,address(this),amount50);
+            Token(usdt_address).transferFrom(msg.sender,owner,amount20);
+            Token(usdt_address).transferFrom(msg.sender,marketing_add,amount30);
+
 
              if(user[msg.sender].investBefore == false)
             {  
@@ -194,11 +205,11 @@ contract Step2Earn
        {
             require(_investedamount>=minimum_investment,"you cant invest less than minimumum investment");
 
-            require(Token(usdt_address).balanceOf(msg.sender)>=_investedamount,"you dont have enough usdt");
-            require(Token(usdt_address).allowance(msg.sender,address(this))>=_investedamount,"kindly appprove the USDT");
+            require(Token(Token_address).balanceOf(msg.sender)>=_investedamount,"you dont have enough usdt");
+            require(Token(Token_address).allowance(msg.sender,address(this))>=_investedamount,"kindly appprove the USDT");
 
-            Token(usdt_address).transferFrom(msg.sender,address(this),_investedamount*70000000000000000000/100000000000000000000);
-            Token(usdt_address).transferFrom(msg.sender,owner,_investedamount*30000000000000000000/100000000000000000000);
+            Token(Token_address).transferFrom(msg.sender,address(this),_investedamount*70000000000000000000/100000000000000000000);
+            Token(Token_address).transferFrom(msg.sender,owner,_investedamount*30000000000000000000/100000000000000000000);
 
 
 
@@ -494,7 +505,7 @@ contract Step2Earn
             uint Total_reward = getReward(msg.sender);
             require(Total_reward>=_amount,"you dont have rewards to withdrawn");         //ensuring that if the investor have rewards to withdraw
         
-            Token(usdt_address).transfer(msg.sender,_amount);             // transfering the reward to investor             
+            Token(Token_address).transfer(msg.sender,_amount);             // transfering the reward to investor             
             user[msg.sender].totalWithdraw_reward+=_amount;
 
             return true;

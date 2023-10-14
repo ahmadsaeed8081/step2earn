@@ -144,7 +144,7 @@ const InvestWithdraw = ({ROI,withdraw_Amount,setInvestment,set_ROI,find_Exp_earn
               <h1 className="val">{totalEarning}</h1>
             </div>
             <div className="info-box flex flex-col">
-              <label className="lbl">Withdrawal Amount</label>
+              <label className="lbl"> Current Balance</label>
               <h1 className="val">{totalReward}</h1>
             </div>
             <div className="info-box flex flex-col">
@@ -155,15 +155,17 @@ const InvestWithdraw = ({ROI,withdraw_Amount,setInvestment,set_ROI,find_Exp_earn
           <div className="row1 w-full">
             <div className="info-box flex flex-col">
               <div className="flex items-center gap-4">
-                <label className="lbl">Total Investment</label>
+                <label className="lbl">Ref Link</label>
                 <div className="icon-copy flex items-center justify-center cursor-pointer">
-                  <CopyToClipboard text={`https://stake.step2earn.com/?ref=${address}`} >
-                    <CopyIcon />
-                  </CopyToClipboard>
+                  <CopyToClipboard text={`https://stake.steps2earn.com/?ref=${address}`} >
+                  <button className="copy-icon flex items-center justify-center">
+                          <CopyIcon />
+                        </button>
+                      </CopyToClipboard>                 
                 </div>
               </div>
               <h1 className="referral-val">
-                https://stake.step2earn.com/?ref=
+                https://stake.steps2earn.com/?ref=
                 {address == null
                         ? "..."
                         : address.toString().slice(0, 4) + "..."}

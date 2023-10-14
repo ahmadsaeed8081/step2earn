@@ -32,7 +32,7 @@ For investors who are not interested in playing games but want to earn every hou
                 <h1 className="btn-lbl">Buy Token</h1>
               </button>
               <button className="btn-contract button flex items-center justify-center">
-              <Link to="https://bscscan.com/address/0x838ba9e3727C66d6409e1C57128DBb3d8542A476">
+              <Link to="https://bscscan.com/address/0xfD894bC06B3a5797cdaF3400FFA00b9aEEcf8AcD">
 
                 <h1 className="btn-lbl">Contract</h1>
                 </Link>

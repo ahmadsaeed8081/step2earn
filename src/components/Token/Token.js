@@ -6,39 +6,46 @@ const Token = () => {
       <div id="token" className="token-section  ">
         <div className="token-wrap wrapWidth grid lg:grid-cols-2 ">
           <div className="token-details flex-1 max-md:mx-auto">
-            <p className="token-desc text-white flex justify-start items-end gap-1 ">
+            {/* <p className="token-desc text-white flex justify-start items-end gap-1 ">
               <hr className="w-20 pb-2" />
-              How to Purchaise
-            </p>
-            <h1 className="token-heading">Buy Token Easy</h1>
+              Why Steps2earn
+
+            </p> */}
+            <h1 className="token-heading">Why Steps2earn
+</h1>
             <p className="token-desc">
-              Here is our full documents that help you to understand <br />
-              deeply about us and our operation
+            We are using a decentralized blockchain for staking
+
             </p>
             <div className="token-checked grid lg:grid-cols-2 max-md:grid-cols-2 gap-10 max-md:gap-3">
               <div className="check-wrap ">
                 <div className="check">
                   <CheckIcon />
                 </div>
-                <h2 className="check-desc">Easy Purchaise</h2>
+                <h2 className="check-desc">Easy to buy and stake STPCOIN
+</h2>
               </div>
               <div className="check-wrap ">
                 <div className="check">
                   <CheckIcon />
                 </div>
-                <h2 className="check-desc">Simple Option</h2>
+                <h2 className="check-desc">Withdrawal in BEP20 USDT
+</h2>
               </div>
               <div className="check-wrap ">
                 <div className="check">
                   <CheckIcon />
                 </div>
-                <h2 className="check-desc">Privaci & Policy</h2>
+                <h2 className="check-desc">You can refer others and earn</h2>
               </div>
               <div className="check-wrap ">
                 <div className="check">
                   <CheckIcon />
                 </div>
-                <h2 className="check-desc">One Pager</h2>
+                <h2 className="check-desc">400% ROI payout
+
+
+</h2>
               </div>
             </div>
             {/* <button className="token-button">

@@ -13,11 +13,11 @@ const Update = () => {
   return (
     <div id="update" className="update-section">
       <div className="update-details wrapWidth">
-        <h1 className="update-heading">Don't miss out, Stay updated</h1>
-        <p className="update-desc">
+        <h1 className="update-heading">Join our social media platform</h1>
+        {/* <p className="update-desc">
           Don’t hesitate to subscribe to latest news about ICo markets as well
           as crucial financial knowledge to become successful investors globally
-        </p>
+        </p> */}
         <div className="update-icons">
         
           <div className="icon">
